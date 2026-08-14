@@ -1,7 +1,7 @@
 {
   "269": {
     "inputs": {
-      "image": "vintage_thinker.jpg"
+      "image": "vintage_thinker.png"
     },
     "class_type": "LoadImage",
     "_meta": {
