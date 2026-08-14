@@ -5,14 +5,11 @@ FROM runpod/worker-comfyui:5.8.4-base
 ARG HF_TOKEN=""
 
 # Install ComfyUI-KJNodes at the revision tested in the Pod
-RUN git clone https://github.com/kijai/ComfyUI-KJNodes.git \
+RUN git clone --depth 1 \
+        https://github.com/kijai/ComfyUI-KJNodes.git \
         /comfyui/custom_nodes/ComfyUI-KJNodes \
-    && git -C /comfyui/custom_nodes/ComfyUI-KJNodes \
-        checkout d19ce9078f03cc66a462efc082defd30aef16d02 \
-    && if [ -f /comfyui/custom_nodes/ComfyUI-KJNodes/requirements.txt ]; then \
-        pip install --no-cache-dir \
-            -r /comfyui/custom_nodes/ComfyUI-KJNodes/requirements.txt; \
-       fi
+    && pip install --no-cache-dir \
+        -r /comfyui/custom_nodes/ComfyUI-KJNodes/requirements.txt
 
 # LTX 2.3 FP8 checkpoint
 RUN BACKOFFS="10 20 30 60 90" \
