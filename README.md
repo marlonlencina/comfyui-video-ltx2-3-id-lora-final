@@ -1,4 +1,3 @@
-Rebuild after Network Volume configuration.
 # video_ltx2_3_id_lora_final
 ComfyUI workflow Dockerized via [comfyui-wizard](https://comfy.getrunpod.io).
 Submission: https://comfy.getrunpod.io/dashboard/submissions/kd7cwz3r508t6g204jhmh0t4as8ccjd9
