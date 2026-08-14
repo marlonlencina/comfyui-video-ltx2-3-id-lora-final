@@ -1,6 +1,15 @@
 # RunPod Serverless ComfyUI base image
 FROM runpod/worker-comfyui:5.8.4-base
 
+# Atualiza o ComfyUI para a mesma revisão testada no Pod
+RUN git -C /comfyui fetch --depth 1 origin \
+        c2bcbecd82ec5ae66594340b395c24ef0217b238 \
+    && git -C /comfyui checkout --detach \
+        c2bcbecd82ec5ae66594340b395c24ef0217b238 \
+    && pip install --no-cache-dir \
+        -r /comfyui/requirements.txt \
+    && grep -Rq "LTXVReferenceAudio" /comfyui/comfy_extras
+
 # Install ComfyUI-KJNodes
 RUN git clone --depth 1 \
         https://github.com/kijai/ComfyUI-KJNodes.git \
