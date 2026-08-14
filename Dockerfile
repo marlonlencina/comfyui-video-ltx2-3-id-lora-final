@@ -13,8 +13,8 @@ COPY extra_model_paths.yaml \
      /comfyui/extra_model_paths.yaml
 
 # Placeholder inputs referenced by the API workflow
-COPY input/vintage_thinker.png \
-     /comfyui/input/vintage_thinker.png
+COPY input/vintage_thinker.jpg \
+     /comfyui/input/vintage_thinker.jpg
 
 COPY input/ltx23_reference_audio.mp3 \
      /comfyui/input/ltx23_reference_audio.mp3
